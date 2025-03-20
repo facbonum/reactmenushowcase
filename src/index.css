@@ -1,0 +1,69 @@
+/* Import TailwindCSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global Styles */
+html, body {
+  @apply min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-white antialiased;
+  font-family: 'Inter', sans-serif;  /* Ensure consistent font */
+  line-height: 1.6;
+  scroll-behavior: smooth;           /* Smooth scrolling */
+  overflow-x: hidden;                /* Prevent horizontal overflow */
+}
+
+/* Links */
+a {
+  @apply text-accent hover:text-orange-400 transition-colors;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Buttons */
+button {
+  @apply px-4 py-2 rounded-lg bg-primary text-white hover:bg-secondary transition;
+}
+
+/* Cards */
+.card {
+  @apply bg-dark text-white shadow-lg rounded-xl p-6;
+}
+
+/* Smooth Animations */
+.transition-fade {
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Responsive Menu Styles */
+.menu {
+  @apply fixed top-0 left-0 w-64 h-full bg-gray-700 shadow-xl z-50 transform transition-transform;
+}
+.menu-open {
+  @apply translate-x-0;
+}
+.menu-closed {
+  @apply -translate-x-full;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-600 rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-500;
+}
+
+/* Custom Animations */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
